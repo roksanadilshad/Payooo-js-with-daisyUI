@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payoo Home</title>
+    <!-- remix CDN -->
+     <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+     <!-- daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h1>hi</h1>
+<body class="outfit max-w-lg mx-auto bg-[#F4F5F7]">
+    <div class="flex justify-between items-center  bg-[#FFFFFF] border-b-gray-50 border-b-1  ">
+        <div class="flex justify-between items-center mt-3 mb-5">
+            <img src="assets/Group.png" class="w-[50px]">
+            <div>
+            <h2 class="text-[18px] font-extrabold">$<span>45000</span></h2>
+            <p class=" text-[#08080888] text-[14px]">Available Balance</p>
+            </div>
+        </div>
+        <button class="btn rounded-[9px] text-[#08080879] text-[14px] bg-[#FFFFFF]"><i class="ri-logout-box-line text-[16px]"></i>Log Out</button>
+    </div>
 </body>
 </html>
