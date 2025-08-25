@@ -19,7 +19,7 @@
         <div class="flex justify-between items-center mt-3 mb-5">
             <img src="assets/Group.png" class="w-[50px]">
             <div>
-            <h2 class="text-[18px] font-extrabold">$<span>45000</span></h2>
+            <h2 class="text-[18px] font-extrabold">$<span id="available-balance">45000</span></h2>
             <p class=" text-[#08080888] text-[14px]">Available Balance</p>
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div>
            <fieldset class="fieldset">
                 <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Select A Bank</legend>
-                <select class="select bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left">
+                <select id="select-bnk" class="select bg-[#F4F5F7] text-[#0808088c] border-none rounded-4xl px-[16px] text-left">
                   
                   <option>Select bank</option>
                   <option>AB Bank</option>
@@ -76,22 +76,26 @@
                 </select>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Bank Account Number</legend>
-              <input type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit account number" />
+              <input id="bnk-num" type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit account number" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Amount to Add</legend>
-              <input type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Add Amount to withdraw" />
+              <input id="add-amount" type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Add Amount to withdraw" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Pin Number</legend>
-              <input type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
+              <input id="pin-num" type="text" class="input  bg-[#F4F5F7] text-[#08080850] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
               </div>
 
-              <button id="form-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Add Money</button>
+              <button id="addMoney-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Add Money</button>
     
              </fieldset>
         </div>
     </form>
     </div>
+
+
+
+    <script src="main.js"></script>
 </body>
 </html>
