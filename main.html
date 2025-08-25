@@ -63,8 +63,6 @@
     </div>
 
     <!-- Add Money -->
-
-
     <div id="add-money" class="mt-[30px] mx-[24px] pb-[60px]">
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Add Money</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
@@ -105,18 +103,18 @@
            <fieldset class="fieldset">
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Agent Number</legend>
-              <input id="bnk-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit number" />
+              <input id="agent-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit number" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Amount</legend>
-              <input id="add-amount" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Enter Amount to withdraw" />
+              <input id="withdraw-amount" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Enter Amount to withdraw" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Pin Number</legend>
-              <input id="pin-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
+              <input id="pin-num-2" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
               </div>
 
-              <button id="addMoney-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Withdraw Money</button>
+              <button id="withdraw-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Withdraw Money</button>
     
              </fieldset>
         </div>
@@ -124,7 +122,6 @@
     </div>
 
     <!-- transfar money -->
-
     <div id="transfer-money" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Transfer Money</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
@@ -132,18 +129,18 @@
            <fieldset class="fieldset">
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">User Account Number</legend>
-              <input id="bnk-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit number" />
+              <input id="account-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 11 digit number" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Amount</legend>
-              <input id="add-amount" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Enter Amount to withdraw" />
+              <input id="amount" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Enter Amount to withdraw" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Pin Number</legend>
-              <input id="pin-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
+              <input id="pin-num-3" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
               </div>
 
-              <button id="addMoney-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Send Now</button>
+              <button id="send-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Send Now</button>
     
              </fieldset>
         </div>
@@ -151,7 +148,6 @@
     </div>
 
     <!-- pay bill -->
-     
     <div id="pay-bill" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Pay Bill</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
@@ -168,18 +164,18 @@
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Biller Account Number</legend>
-              <input id="bnk-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter account number" />
+              <input id="bnk-account-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter account number" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Amount To Pay</legend>
-              <input id="add-amount" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Add amount to pay" />
+              <input id="amount-to-pay" type="text" class="input  bg-[#F4F5F7] text-[#080808fd] border-none rounded-4xl px-[16px] text-left" placeholder="Add amount to pay" />
               </div>
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Pin Number</legend>
-              <input id="pin-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
+              <input id="pin-num-4" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter 4 digit pin number" />
               </div>
 
-              <button id="addMoney-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Pay Now</button>
+              <button id="paybill-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Pay Now</button>
     
              </fieldset>
         </div>
@@ -195,10 +191,10 @@
                 
                 <div>
               <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Enter Bonus Coupon</legend>
-              <input id="pin-num" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter your coupon" />
+              <input id="coupon" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter your coupon" />
               </div>
 
-              <button id="addMoney-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Get Bonus</button>
+              <button id="bonus-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Get Bonus</button>
     
              </fieldset>
         </div>
