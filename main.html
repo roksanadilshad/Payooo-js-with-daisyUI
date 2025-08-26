@@ -35,27 +35,27 @@
 
         <div class="grid grid-cols-3 gap-[15px]">
 
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div  id="add-money-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/wallet1.png" class="mx-auto mb-[8px]">
-           <p id="add-money-btn" class="text-center text-[#08080888] text-[14px]">Add Money</p>
+           <p class="text-center text-[#08080888] text-[14px]">Add Money</p>
         </div>
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div id="cash-out-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/send1.png" class="mx-auto mb-[8px]">
-           <p id="cash-out-btn" class="text-center text-[#08080888] text-[14px]">Cash Out</p>
+           <p class="text-center text-[#08080888] text-[14px]">Cash Out</p>
         </div>
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div id="transfar-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/money1.png" class="mx-auto mb-[8px]">
-           <p id="transfar-btn" class="text-center text-[#08080888] text-[14px]">Transfer Money</p>
+           <p class="text-center text-[#08080888] text-[14px]">Transfer Money</p>
         </div>
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div id="get-bonus-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/bonus1.png" class="mx-auto mb-[8px]">
-           <p id="get-bonus-btn" class="text-center text-[#08080888] text-[14px]">Get Bonus</p>
+           <p class="text-center text-[#08080888] text-[14px]">Get Bonus</p>
         </div>
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div id="pay-bill-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/purse1.png" class="mx-auto mb-[8px]">
-           <p id="pay-bill-btn" class="text-center text-[#08080888] text-[14px]">Pay Bill</p>
+           <p class="text-center text-[#08080888] text-[14px]">Pay Bill</p>
         </div>
-        <div class="py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
+        <div id="transiction-btn" class="form-btn py-[20px] px-[20px] border-1 border-[#0808081c] rounded-[12px] ">
             <img src="assets/transaction1.png" class="mx-auto mb-[8px]">
            <p class="text-center text-[#08080888] text-[14px]">Transactions</p>
         </div>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- Add Money -->
-    <div id="add-money" class="mt-[30px] mx-[24px] pb-[60px]">
+    <div id="add-money" class="form mt-[30px] mx-[24px] pb-[60px]">
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Add Money</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
         <div>
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Cash Out -->
-    <div id="cash-out" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
+    <div id="cash-out" class="form mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Cash Out</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
         <div>
@@ -122,7 +122,7 @@
     </div>
 
     <!-- transfar money -->
-    <div id="transfer-money" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
+    <div id="transfer-money" class=" form mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Transfer Money</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
         <div>
@@ -148,7 +148,7 @@
     </div>
 
     <!-- pay bill -->
-    <div id="pay-bill" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
+    <div id="pay-bill" class="form mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Pay Bill</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
         <div>
@@ -183,8 +183,25 @@
     </div>
 
     <!-- get bonus -->
-    <div id="get-bonus" class="mt-[30px] mx-[24px] pb-[60px] hidden" >
+    <div id="get-bonus" class="form mt-[30px] mx-[24px] pb-[60px] hidden" >
     <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Get Bonus</h2></div>
+    <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
+        <div>
+           <fieldset class="fieldset">
+                
+                <div>
+              <legend class="fieldset-legend text-[16px] text-[#080808e0] font-medium ">Enter Bonus Coupon</legend>
+              <input id="coupon" type="text" class="input  bg-[#F4F5F7] text-[#080808] border-none rounded-4xl px-[16px] text-left" placeholder="Enter your coupon" />
+              </div>
+
+              <button id="bonus-btn" class="btn rounded-4xl bg-[#0874F2] text-[#FFFFFF] mt-4 border-[1px] border-[#0874F2] ">Get Bonus</button>
+    
+             </fieldset>
+        </div>
+    </form>
+    </div>
+    <div id="transactions" class="form mt-[30px] mx-[24px] pb-[60px] hidden" >
+    <div><h2 class="text-[18px] text-[#080808f6] font-semibold mb-[26px]">Transictions</h2></div>
     <form action="" class="bg-[#FFFFFF] rounded-2xl p-[24px] ">
         <div>
            <fieldset class="fieldset">
