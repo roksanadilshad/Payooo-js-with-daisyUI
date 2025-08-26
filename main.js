@@ -1,12 +1,30 @@
 const passNum = 1234;
+
+function getInputNumber(id){
+const inputFildNumber = parseInt( document.getElementById(id).value);
+return inputFildNumber;
+}
+function getInput(id){
+const inputFild = document.getElementById(id).value ;
+return inputFild;
+}
+function getTextNumber(id){
+const textFild = parseInt(document.getElementById(id).innerText) ;
+return textFild;
+}
+function setInnerText(id, value){
+const totalAmount = document.getElementById(id).innerText = value ;
+return totalAmount;
+}
+
 document.getElementById("addMoney-btn").addEventListener('click', function(event){
     event.preventDefault();
-   const bankName = document.getElementById('select-bnk').value;
-   const accountNum = document.getElementById('bnk-num').value;
-   const addAmount = parseInt( document.getElementById('add-amount').value);
-   const pinNum = parseInt(document.getElementById('pin-num').value);
+   const bankName = getInput('select-bnk');
+   const accountNum = getInput('bnk-num');
+   const addAmount = getInputNumber('add-amount');
+   const pinNum = getInputNumber('pin-num');
 
-   const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+   const availableBalance = getTextNumber('available-balance');
    
    if(accountNum.length !== 11 || isNaN(accountNum)){
         alert("Please provide a valid Account Number");
@@ -23,63 +41,59 @@ document.getElementById("addMoney-btn").addEventListener('click', function(event
     }
     const totalAmount = addAmount + availableBalance;
 
-    document.getElementById("available-balance").innerText 
-    = totalAmount;
+   setInnerText('available-balance',totalAmount);
 
 
 })
 
 //cash out 
 document.getElementById("withdraw-btn").addEventListener('click', function(event){
-    event.preventDefault();
-    const agentNum = document.getElementById('agent-num').value;
-    const amount = parseInt( document.getElementById('withdraw-amount').value);
-   const pinNum = parseInt(document.getElementById('pin-num-2').value);
-    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
-
-
+  event.preventDefault();
+  const agentNum = getInput('agent-num');
+  const amount = getInputNumber('withdraw-amount');
+  const pinNum = getInputNumber('pin-num-2');
+  const availableBalance =getTextNumber('available-balance');
+  
+  
   if(agentNum.length !== 11 || isNaN(agentNum)){
-        alert("Please provide a valid Account Number");
-      return;
-    }
-   
-   if(pinNum !== passNum){
-        alert("Please provide a valid Pin Number");
+    alert("Please provide a valid Account Number");
+    return;
+  }
+  
+  if(pinNum !== passNum){
+    alert("Please provide a valid Pin Number");
       return;
     }
 const totalAmount = availableBalance - amount;
 
 if(isNaN(totalAmount) || totalAmount <= 0){
-     alert("Please provide a valid Amount");
-   return;
- }
-    document.getElementById("available-balance").innerText 
-    = totalAmount;
+  alert("Please provide a valid Amount");
+  return;
+}
+
+setInnerText('available-balance',totalAmount);
+;
 
 
 
 })
 //transfer money 
 document.getElementById("send-btn").addEventListener('click', function(event){
-    event.preventDefault();
-    const accountNum = document.getElementById('account-num').value;
-    const amount = parseInt( document.getElementById('amount').value);
-   const pinNum = parseInt(document.getElementById('pin-num-3').value);
-    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
-    
-
-    
-    
-    if(accountNum.length !== 11 || isNaN(accountNum)){
+  event.preventDefault();
+  const accountNum = getInput('account-num');
+  const amount = getInputNumber('amount');
+  const pinNum = getInputNumber('pin-num-3');
+  const availableBalance = getTextNumber('available-balance');
+  
+  if(accountNum.length !== 11 || isNaN(accountNum)){
         alert("Please provide a valid Account Number");
         return;
-    }
-    
-    if(pinNum !== passNum){
+      }
+      
+      if(pinNum !== passNum){
         alert("Please provide a valid Pin Number");
         return;
     }
-    
     
     if(isNaN(amount) || amount <= 0){
         alert("Please provide a valid Amount");
@@ -87,25 +101,23 @@ document.getElementById("send-btn").addEventListener('click', function(event){
     }
     
     if(amount >= 0){
-        const charge = amount * .02;
-        const mainAmount = charge + amount;
-        
-        const totalAmount = availableBalance - mainAmount;
-        
-        document.getElementById("available-balance").innerText 
-        = totalAmount;
-        return;
+      const charge = amount * .02;
+      const mainAmount = charge + amount;
+      
+      const totalAmount = availableBalance - mainAmount;
+      
+      setInnerText('available-balance',totalAmount);
     }
-
-})
+    
+  })
   
-//get bonus
-document.getElementById('bonus-btn').addEventListener('click', function(){
+  //get bonus
+  document.getElementById('bonus-btn').addEventListener('click', function(){
     const coupon = 'ROKSANA45';
-    const couponCode = document.getElementById('coupon').value;
+    const couponCode = getInput('coupon');
     if(couponCode === coupon){
-        alert("You Get '10% Discount' In Any Transiction For Today 'Only One Time'");
-        return;
+      alert("You Get '10% Discount' In Any Transiction For Today 'Only One Time'");
+      return;
     }
     else{
         alert('Coupon ki seta Roksana Jane....You can ask her   ');
@@ -117,32 +129,181 @@ document.getElementById('bonus-btn').addEventListener('click', function(){
 
 //pay bill
 document.getElementById("paybill-btn").addEventListener('click', function(event){
-    event.preventDefault();
-    const accountNum = document.getElementById('bnk-account-num').value;
-    const amount = parseInt( document.getElementById('amount-to-pay').value);
-   const pinNum = parseInt(document.getElementById('pin-num-4').value);
-    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
-
-
-  if(accountNum.length !== 11 || isNaN(accountNum)){
-        alert("Please provide a valid Account Number");
+  event.preventDefault();
+  const accountNum = getInput('bnk-account-num');
+    const amount = getInputNumber('amount-to-pay');
+    const pinNum = getInputNumber('pin-num-4');
+    const availableBalance = getTextNumber('available-balance');
+    
+    
+    if(accountNum.length !== 11 || isNaN(accountNum)){
+      alert("Please provide a valid Account Number");
       return;
     }
-   
-   if(pinNum !== passNum){
+    
+    if(pinNum !== passNum){
         alert("Please provide a valid Pin Number");
-      return;
+        return;
     }
     if(isNaN(amount) || amount <= 0){
-         alert("Please provide a valid Amount");
+      alert("Please provide a valid Amount");
        return;
     }
-const totalAmount = availableBalance - amount;
+    const totalAmount = availableBalance - amount;
 
-    document.getElementById("available-balance").innerText 
-    = totalAmount;
+     if(isNaN(totalAmount) || totalAmount <= 0){
+      alert("Tor kase ki atw tk ase j chaitesos 'fokinni'");
+       return;
+    }
+    setInnerText('available-balance',totalAmount);
+  })
 
-})
+  //row js
+
+
+  // document.getElementById("addMoney-btn").addEventListener('click', function(event){
+  //     event.preventDefault();
+  //    const bankName = document.getElementById('select-bnk').value;
+  //    const accountNum = document.getElementById('bnk-num').value;
+  //    const addAmount = getInputNumber('add-amount');
+  //    const pinNum = getInputNumber('pin-num');
+  
+  //    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+     
+  //    if(accountNum.length !== 11 || isNaN(accountNum)){
+  //         alert("Please provide a valid Account Number");
+  //       return;
+  //     }
+     
+  //    if(pinNum !== passNum){
+  //         alert("Please provide a valid Pin Number");
+  //       return;
+  //     }
+  //    if(isNaN(addAmount) || addAmount <= 0){
+  //         alert("Please provide a valid Amount");
+  //       return;
+  //     }
+  //     const totalAmount = addAmount + availableBalance;
+  
+  //     document.getElementById("available-balance").innerText 
+  //     = totalAmount;
+  
+  
+  // })
+
+// document.getElementById("withdraw-btn").addEventListener('click', function(event){
+//     event.preventDefault();
+//     const agentNum = document.getElementById('agent-num').value;
+//     const amount = parseInt( document.getElementById('withdraw-amount').value);
+//    const pinNum = parseInt(document.getElementById('pin-num-2').value);
+//     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+
+
+//   if(agentNum.length !== 11 || isNaN(agentNum)){
+//         alert("Please provide a valid Account Number");
+//       return;
+//     }
+   
+//    if(pinNum !== passNum){
+//         alert("Please provide a valid Pin Number");
+//       return;
+//     }
+// const totalAmount = availableBalance - amount;
+
+// if(isNaN(totalAmount) || totalAmount <= 0){
+//      alert("Please provide a valid Amount");
+//    return;
+//  }
+//     document.getElementById("available-balance").innerText 
+//     = totalAmount;
+
+
+
+// })
+// //transfer money 
+// document.getElementById("send-btn").addEventListener('click', function(event){
+//     event.preventDefault();
+//     const accountNum = document.getElementById('account-num').value;
+//     const amount = parseInt( document.getElementById('amount').value);
+//    const pinNum = parseInt(document.getElementById('pin-num-3').value);
+//     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+    
+
+    
+    
+//     if(accountNum.length !== 11 || isNaN(accountNum)){
+//         alert("Please provide a valid Account Number");
+//         return;
+//     }
+    
+//     if(pinNum !== passNum){
+//         alert("Please provide a valid Pin Number");
+//         return;
+//     }
+    
+    
+//     if(isNaN(amount) || amount <= 0){
+//         alert("Please provide a valid Amount");
+//         return;
+//     }
+    
+//     if(amount >= 0){
+//         const charge = amount * .02;
+//         const mainAmount = charge + amount;
+        
+//         const totalAmount = availableBalance - mainAmount;
+        
+//         document.getElementById("available-balance").innerText 
+//         = totalAmount;
+//         return;
+//     }
+
+// })
+  
+// //get bonus
+// document.getElementById('bonus-btn').addEventListener('click', function(){
+//     const coupon = 'ROKSANA45';
+//     const couponCode = document.getElementById('coupon').value;
+//     if(couponCode === coupon){
+//         alert("You Get '10% Discount' In Any Transiction For Today 'Only One Time'");
+//         return;
+//     }
+//     else{
+//         alert('Coupon ki seta Roksana Jane....You can ask her   ');
+//         return;
+//     }
+
+// })
+
+
+// //pay bill
+// document.getElementById("paybill-btn").addEventListener('click', function(event){
+//     event.preventDefault();
+//     const accountNum = document.getElementById('bnk-account-num').value;
+//     const amount = parseInt( document.getElementById('amount-to-pay').value);
+//    const pinNum = parseInt(document.getElementById('pin-num-4').value);
+//     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+
+
+//   if(accountNum.length !== 11 || isNaN(accountNum)){
+//         alert("Please provide a valid Account Number");
+//       return;
+//     }
+   
+//    if(pinNum !== passNum){
+//         alert("Please provide a valid Pin Number");
+//       return;
+//     }
+//     if(isNaN(amount) || amount <= 0){
+//          alert("Please provide a valid Amount");
+//        return;
+//     }
+// const totalAmount = availableBalance - amount;
+
+//     document.getElementById("available-balance").innerText 
+//     = totalAmount;
+
+// })
 
 
 
