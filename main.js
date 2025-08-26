@@ -320,10 +320,10 @@ function toggleHandler(id){
     document.getElementById(id).style.display = 'block';
 }
 
-document.getElementById('add-money-btn').addEventListener('click', function(){
-   toggleHandler('add-money');
+//toggle btn
 
-    const formBtns = document.getElementsByClassName('form-btn ');
+function toggleHandlerBtn(id){
+  const formBtns = document.getElementsByClassName('form-btn ');
 
     for(const btn of formBtns){
       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
@@ -331,79 +331,131 @@ document.getElementById('add-money-btn').addEventListener('click', function(){
        btn.classList.add('border-[#0808081c]')  
     }
    
-   document.getElementById('add-money-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('add-money-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+   document.getElementById(id).classList.remove('border-[#0808081c]');
+   document.getElementById(id).classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+}
+
+
+//toggle
+document.getElementById('add-money-btn').addEventListener('click', function(){
+   toggleHandler('add-money');
+   toggleHandlerBtn('add-money-btn')
 
 })
 document.getElementById('cash-out-btn').addEventListener('click', function(){
     toggleHandler('cash-out');
-    const formBtns = document.getElementsByClassName('form-btn ');
-
-    for(const btn of formBtns){
-      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-      
-       btn.classList.add('border-[#0808081c]')  
-    }
-   
-   document.getElementById('cash-out-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('cash-out-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+    toggleHandlerBtn('cash-out-btn');
 })
 document.getElementById('transfar-btn').addEventListener('click', function(){
   toggleHandler('transfer-money');
-  const formBtns = document.getElementsByClassName('form-btn ');
-
-    for(const btn of formBtns){
-      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-      
-       btn.classList.add('border-[#0808081c]')  
-    }
-   
-   document.getElementById('transfar-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('transfar-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+  toggleHandlerBtn('transfar-btn')
 
 })
 document.getElementById('get-bonus-btn').addEventListener('click', function(){
    toggleHandler('get-bonus');
-   const formBtns = document.getElementsByClassName('form-btn ');
-
-    for(const btn of formBtns){
-      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-      
-       btn.classList.add('border-[#0808081c]')  
-    }
-   
-   document.getElementById('get-bonus-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('get-bonus-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
-
+   toggleHandlerBtn('get-bonus-btn')
 })
 document.getElementById('pay-bill-btn').addEventListener('click', function(){
   toggleHandler('pay-bill');
-  const formBtns = document.getElementsByClassName('form-btn ');
-
-    for(const btn of formBtns){
-      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-      
-       btn.classList.add('border-[#0808081c]')  
-    }
-   
-   document.getElementById('pay-bill-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('pay-bill-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
-
+ toggleHandlerBtn('pay-bill-btn')
 })
 document.getElementById('transiction-btn').addEventListener('click', function(){
    toggleHandler('transactions');
-   const formBtns = document.getElementsByClassName('form-btn ');
-
-    for(const btn of formBtns){
-      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-      
-       btn.classList.add('border-[#0808081c]')  
-    }
-   
-   document.getElementById('transiction-btn').classList.remove('border-[#0808081c]');
-   document.getElementById('transiction-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+   toggleHandlerBtn('transiction-btn');
 
 })
+// function toggleHandler(id){
+//  const forms = document.getElementsByClassName('form');
+//     for(const form of forms){
+//       form.style.display = 'none';
+//     }
+//     document.getElementById(id).style.display = 'block';
+// }
+
+// document.getElementById('add-money-btn').addEventListener('click', function(){
+//    toggleHandler('add-money');
+
+//     const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('add-money-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('add-money-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+// })
+// document.getElementById('cash-out-btn').addEventListener('click', function(){
+//     toggleHandler('cash-out');
+//     const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('cash-out-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('cash-out-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+// })
+// document.getElementById('transfar-btn').addEventListener('click', function(){
+//   toggleHandler('transfer-money');
+//   const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('transfar-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('transfar-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+// })
+// document.getElementById('get-bonus-btn').addEventListener('click', function(){
+//    toggleHandler('get-bonus');
+//    const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('get-bonus-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('get-bonus-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+// })
+// document.getElementById('pay-bill-btn').addEventListener('click', function(){
+//   toggleHandler('pay-bill');
+//   const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('pay-bill-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('pay-bill-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+// })
+// document.getElementById('transiction-btn').addEventListener('click', function(){
+//    toggleHandler('transactions');
+//    const formBtns = document.getElementsByClassName('form-btn ');
+
+//     for(const btn of formBtns){
+//       btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+      
+//        btn.classList.add('border-[#0808081c]')  
+//     }
+   
+//    document.getElementById('transiction-btn').classList.remove('border-[#0808081c]');
+//    document.getElementById('transiction-btn').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+// })
 // document.getElementById('add-money-btn').addEventListener('click', function(){
 //    toggleHandler('add-money');
    
