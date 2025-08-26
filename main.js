@@ -1,4 +1,5 @@
 const passNum = 1234;
+const transactionData = [];
 
 function getInputNumber(id){
 const inputFildNumber = parseInt( document.getElementById(id).value);
@@ -42,8 +43,16 @@ document.getElementById("addMoney-btn").addEventListener('click', function(event
     const totalAmount = addAmount + availableBalance;
 
    setInnerText('available-balance',totalAmount);
+   
 
-
+   const data = {
+    name : 'Add Money',
+    date : new Date().toLocaleTimeString()
+   }
+  transactionData.push(data);
+  console.log(transactionData);
+  
+  
 })
 
 //cash out 
@@ -72,9 +81,12 @@ if(isNaN(totalAmount) || totalAmount <= 0){
 }
 
 setInnerText('available-balance',totalAmount);
-;
-
-
+const data = {
+    name : 'Cash Out',
+    date : new Date().toLocaleTimeString()
+   }
+  transactionData.push(data);
+  console.log(transactionData);
 
 })
 //transfer money 
@@ -108,6 +120,12 @@ document.getElementById("send-btn").addEventListener('click', function(event){
       
       setInnerText('available-balance',totalAmount);
     }
+    const data = {
+    name : 'Transfer Money',
+    date : new Date().toLocaleTimeString()
+   }
+  transactionData.push(data);
+  console.log(transactionData);
     
   })
   
@@ -123,6 +141,7 @@ document.getElementById("send-btn").addEventListener('click', function(event){
         alert('Coupon ki seta Roksana Jane....You can ask her   ');
         return;
     }
+
 
 })
 
@@ -156,6 +175,42 @@ document.getElementById("paybill-btn").addEventListener('click', function(event)
        return;
     }
     setInnerText('available-balance',totalAmount);
+
+    const data = {
+    name : 'Pay Bill',
+    date : new Date().toLocaleTimeString()
+   }
+  transactionData.push(data);
+  console.log(transactionData);
+
+  })
+
+  //transiction
+
+  document.getElementById('transiction-btn').addEventListener('click', function(){
+    const transactionContainer = document.getElementById('transaction-container'); 
+    
+    for(const data of transactionData){
+      const div = document.createElement('div');
+      div.innerHTML = `
+      <div class="flex items-center justify-between bg-[#FFFFFF] py-[13px] px-[16px] rounded-[12px] my-[14px]">
+                  <div class="flex items-center">
+                  <div class="p-3 bg-[#08080818] rounded-[50px]">
+                  <img src="assets/wallet1.png" >
+                  </div>
+                  <div class="ml-[8px]">
+                  <h3 class="text-[16px] text-[#080808f6] font-semibold mb-[6px] ">${data.name}</h3>
+                  <p class="text-[#08080888] text-[12px]">${data.date}</p>
+                  </div>
+                </div>
+                <!-- doots -->
+                 <i class="ri-more-2-fill"></i>
+
+                </div>
+      
+      `;
+      transactionContainer.appendChild(div);
+    }
   })
 
   //row js
@@ -308,10 +363,12 @@ document.getElementById("paybill-btn").addEventListener('click', function(event)
 
 
 
-//toggling feature
+/* //toggling feature
 
 //toggle handler
+  
 
+// toggle */
 function toggleHandler(id){
  const forms = document.getElementsByClassName('form');
     for(const form of forms){
@@ -364,13 +421,6 @@ document.getElementById('transiction-btn').addEventListener('click', function(){
    toggleHandlerBtn('transiction-btn');
 
 })
-// function toggleHandler(id){
-//  const forms = document.getElementsByClassName('form');
-//     for(const form of forms){
-//       form.style.display = 'none';
-//     }
-//     document.getElementById(id).style.display = 'block';
-// }
 
 // document.getElementById('add-money-btn').addEventListener('click', function(){
 //    toggleHandler('add-money');
